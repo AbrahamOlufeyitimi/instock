@@ -1,0 +1,113 @@
+@import "./partials/media";
+@import "./partials/mixins";
+@import "./partials/variables";
+@import "./partials/typography";
+
+body {
+  margin: 0;
+  padding: 0;
+  color: $instock-black;
+  background-color: $light-grey;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: $page-header-font-size;
+  line-height: $page-header-line-height;
+  font-weight: 600;
+  margin: 0;
+
+  @include tablet {
+    font-size: $tablet-page-header-font-size;
+    line-height: $tablet-page-header-line-height;
+    font-weight: 600;
+  }
+}
+
+h2 {
+  font-size: $subheader-font-size;
+  line-height: $subheader-line-height;
+  font-weight: 600;
+  margin: 0;
+
+  @include tablet {
+    font-size: $tablet-subheader-font-size;
+    line-height: $tablet-subheader-line-height;
+    font-weight: 600;
+  }
+}
+
+h3 {
+  font-size: $labels-links-btn-font-size;
+  line-height: $labels-links-btn-line-height;
+  font-weight: 600;
+  margin: 0;
+
+  @include tablet {
+    font-size: $tablet-labels-links-btn-font-size;
+    line-height: $tablet-labels-links-btn-line-height;
+    font-weight: 600;
+  }
+}
+
+h4 {
+  font-size: $table-header-font-size;
+  line-height: $table-header-line-height;
+  margin: 0;
+
+  @include tablet {
+    font-size: $tablet-table-header-font-size;
+    line-height: $tablet-table-header-line-height;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+.body-large {
+  font-size: $body-large-font-size;
+  line-height: $body-large-line-height;
+
+  @include tablet {
+    font-size: $tablet-body-large-font-size;
+    line-height: $tablet-body-large-line-height;
+  }
+}
+
+.body-medium {
+  font-size: $body-medium-font-size;
+  line-height: $body-medium-line-height;
+
+  @include tablet {
+    font-size: $tablet-body-medium-font-size;
+    line-height: $tablet-body-medium-line-height;
+  }
+}
+
+.body-small {
+  font-size: $body-small-font-size;
+  line-height: $body-small-line-height;
+
+  @include tablet {
+    font-size: $tablet-body-small-font-size;
+    line-height: $tablet-body-small-line-height;
+  }
+}
+
+button,
+input,
+textarea,
+select {
+  font-family: "Titillium Web", sans-serif;
+}
+button,
+a {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: $instock-black;
+}

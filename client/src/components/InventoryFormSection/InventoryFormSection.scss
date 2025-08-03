@@ -1,0 +1,149 @@
+@use "../../styles/global.scss" as *;
+
+.form-section {
+  padding: 0 1.5rem 2rem 1.5rem;
+  @include tablet {
+    padding: 0 2rem 2rem 2rem;
+    width: 50%;
+  }
+  @include desktop {
+    padding: 0 2.5rem 2rem 2.5rem;
+  }
+
+  &:first-child {
+    border-bottom: 0.063rem solid $cloud;
+    @include tablet {
+      border-bottom: 0;
+      border-right: 0.063rem solid $cloud;
+    }
+  }
+  &:nth-child(2) {
+    margin-top: 2rem;
+    @include tablet {
+      margin: 0;
+    }
+  }
+  &__heading {
+    margin-bottom: 2rem;
+  }
+  &__label {
+    margin-bottom: 0.625rem;
+  }
+
+  &__textarea {
+    height: 7.5rem;
+    width: -webkit-fill-available;
+    padding: 1rem;
+    border: 0.063rem solid $cloud;
+    border-radius: 1.25rem;
+    resize: none;
+  }
+
+  &__radio-group {
+    display: flex;
+    gap: 0.625rem;
+  }
+
+  &__radio-label {
+    display: flex;
+    align-items: center;
+    gap: 0.3125rem;
+    color: $slate;
+    flex: 1;
+    &:checked {
+      color: red;
+    }
+
+    @include tablet {
+      flex: none;
+    }
+  }
+
+  &__radio-input {
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    border: 0.063rem solid $cloud;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 0.4rem;
+      height: 0.4rem;
+      background-color: $instock-indigo;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+    }
+    &:checked {
+      border: 0.063rem solid $instock-indigo;
+    }
+    &:checked::before {
+      opacity: 1;
+    }
+  }
+
+  &__parent {
+    position: relative;
+    &::after {
+      content: '';
+      position: absolute;
+      top: 42%;
+      right: 14px;
+      width: 24px;
+      height: 24px;
+      background-image: url('../../assets/icons/arrow_drop_down-24px.svg');
+      background-size: contain;
+      background-repeat: no-repeat;
+      pointer-events: none;
+    }
+  }
+
+
+  &__select {
+    appearance: none;
+  }
+
+  &__select,
+  &__input {
+    padding: 0 1rem;
+    border: 0.063rem solid $cloud;
+    border-radius: 1.25rem;
+    width: -webkit-fill-available;
+    background-color: $white;
+    height: 2.125rem;
+
+    @include tablet {
+      height: 2.25rem;
+    }
+
+    &--error {
+      border: 0.063rem solid $red;
+    }
+    &--number {
+      width: -webkit-fill-available;
+      @include tablet {
+        width: 7rem;
+      }
+    }
+  }
+}
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: $red;
+  height: 1.5rem;
+  &__icon {
+    width: 1rem;
+  }
+}
+
+

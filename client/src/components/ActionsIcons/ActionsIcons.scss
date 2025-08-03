@@ -1,0 +1,21 @@
+@import "../../styles/global.scss";
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  justify-content: space-between;
+
+  @include tablet {
+    justify-content: end;
+  }
+
+  &__button {
+    background-color: transparent;
+    border: 0;
+    padding: 0;
+  }
+  &__img {
+    width: 1.5rem;
+  }
+}

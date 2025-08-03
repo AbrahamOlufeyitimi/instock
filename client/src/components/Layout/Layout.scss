@@ -1,0 +1,11 @@
+@use "../../styles/global.scss" as *;
+
+.two-color-bg {
+  background: linear-gradient(to bottom, $graphite 3rem, transparent 0);
+  @include tablet {
+    background: linear-gradient(to bottom, $graphite 4.55rem, transparent 0);
+  }
+  .main {
+    min-height: calc(100vh - 8.125rem - 2.375rem);
+  }
+}

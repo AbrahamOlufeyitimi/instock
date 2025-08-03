@@ -1,0 +1,9 @@
+@import "../../styles/global.scss";
+
+.row-table {
+  @include row-table-styles;
+
+  .contact-info {
+    width: 10rem;
+  }
+}

@@ -1,0 +1,162 @@
+@mixin handle-max-width {
+  max-width: 70rem;
+  margin: 0 auto;
+}
+
+@mixin cell-table-styles {
+  .cell-table {
+    width: calc(50% - 0.5rem);
+    &:last-child {
+      width: 100%;
+    }
+
+    &::before {
+      content: attr(data-label);
+      text-transform: uppercase;
+      color: $slate;
+      font-size: 0.688rem;
+      font-weight: 600;
+      @include tablet {
+        content: none;
+      }
+    }
+
+    @include tablet {
+      width: calc((90% - 5rem) / 4);
+
+      &:last-child {
+        display: flex;
+        justify-content: end;
+        width: 10%;
+      }
+    }
+  }
+}
+
+@mixin change-order {
+  @for $i from 1 through 6 {
+    &:nth-child(#{$i}) {
+      @if $i == 2 {
+        order: 3;
+        &::before {
+          order: 3;
+        }
+      } @else if $i == 3 {
+        order: 2;
+        &::before {
+          order: 2;
+        }
+      } @else {
+        order: $i;
+        &::before {
+          order: $i;
+        }
+      }
+    }
+  }
+
+  @include tablet {
+    @for $i from 1 through 6 {
+      &:nth-child(#{$i}) {
+        order: $i;
+        &::before {
+          order: $i;
+        }
+      }
+    }
+  }
+}
+
+@mixin header-item-details-styles {
+  display: flex;
+
+  .form-header {
+    width: 100%;
+    justify-content: space-between;
+    .button {
+      border-radius: 50%;
+      padding: 0.5rem 0.5rem;
+      width: auto;
+      &__icon {
+        margin-right: 0;
+        @include tablet {
+          margin-right: 0.5rem;
+        }
+      }
+      @include tablet {
+        border-radius: 1.25rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+  }
+}
+
+@mixin list-styles {
+  margin: 0 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.125rem 0.313rem 0 rgba($instock-black, 0.1);
+  background-color: $white;
+
+  @include cell-table-styles;
+
+  @include tablet {
+    margin: 0 2rem;
+  }
+
+  @include desktop {
+    @include handle-max-width;
+  }
+}
+
+@mixin row-table-styles {
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 0.063rem solid $cloud;
+
+  &:last-child {
+    border-bottom: 0;
+  }
+  &:hover {
+    background-color: rgba($instock-indigo, 0.07);
+    cursor: pointer;
+  }
+
+  @include tablet {
+    padding: 1rem 2rem;
+    align-items: center;
+  }
+
+  @include desktop {
+    padding: 1rem 2.5rem;
+  }
+
+  .cell-table {
+    @include change-order;
+  }
+
+  .title-cell {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+@mixin column-table-styles {
+  display: none;
+
+  @include tablet {
+    display: flex;
+    padding: 0.688rem 2rem;
+    background-color: $light-grey;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  @include desktop {
+    padding: 0.688rem 2.5rem;
+  }
+}

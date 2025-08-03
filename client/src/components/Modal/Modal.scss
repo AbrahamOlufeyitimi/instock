@@ -1,0 +1,94 @@
+@import "../../styles/global.scss";
+
+.wrapper {
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba($instock-black, 0.7);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: fixed;
+  height: 100%;
+}
+.modal {
+  border-radius: 0.25rem;
+  background-color: $white;
+  box-shadow: 0 0.125rem 0.313rem 0 rgba($instock-black, 0.1);
+  padding: 3.75rem 1rem 1.5rem 1rem;
+  top: 0;
+  height: 100%;
+  position: fixed;
+
+  @include tablet {
+    width: 34rem;
+    top: 10rem;
+    height: auto;
+    padding: 2.5rem 4rem;
+  }
+
+  &____inner {
+    position: relative;
+    width: 100%;
+  }
+  &__popup-button {
+    border: none;
+    background-color: transparent;
+    align-self: flex-end;
+    justify-self: flex-start;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  }
+  &__heading {
+    margin-bottom: 1rem;
+  }
+  &__container {
+    margin-bottom: 0.5em;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 1rem;
+    bottom: 1rem;
+    right: 1rem;
+    position: fixed;
+    width: calc(100% - 2rem);
+    left: 1rem;
+
+    @include tablet {
+      position: static;
+      width: 100%;
+    }
+  }
+  &__close-icon {
+    display: flex;
+  }
+  &__button {
+    width: 100%;
+    @include tablet {
+      width: auto;
+    }
+    &--cancel {
+      a {
+        color: $slate;
+        border: 0.063rem solid $cloud;
+        background-color: $white;
+        &:hover {
+          color: $instock-indigo;
+          border: 0.063rem solid $instock-indigo;
+          background-color: $white;
+        }
+      }
+    }
+    &--delete {
+      a {
+        color: $white;
+        border: 0.063rem solid $red;
+        background-color: $red;
+      }
+    }
+  }
+}

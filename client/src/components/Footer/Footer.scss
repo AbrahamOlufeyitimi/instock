@@ -1,0 +1,11 @@
+@use "../../styles/global.scss" as *;
+
+.footer {
+  padding: 2.5rem 0;
+  text-align: center;
+
+  &__text {
+    color: $slate;
+    @extend .body-small;
+  }
+}

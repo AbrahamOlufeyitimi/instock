@@ -1,0 +1,44 @@
+@use "../../styles/global.scss" as *;
+
+.warehouse-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 0.063rem solid $cloud;
+
+  @include tablet {
+    border-bottom: 0;
+    padding: 2rem 2rem;
+    flex-direction: row;
+    align-items: start;
+    gap: 0;
+  }
+  @include desktop {
+    padding: 2rem 2.5rem;
+  }
+
+  &__left {
+    .item-detail {
+      max-width: none;
+    }
+    @include tablet {
+      width: 40%;
+      border-right: 0.063rem solid $cloud;
+      .item-detail {
+        max-width: 9rem;
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: start;
+    gap: 0.7rem;
+    justify-content: space-between;
+    @include tablet {
+      width: 60%;
+      justify-content: space-around;
+    }
+  }
+}

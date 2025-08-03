@@ -1,0 +1,32 @@
+@import "../../styles/global.scss";
+
+.button {
+  background-color: $instock-indigo;
+  border: 0.063rem solid $instock-indigo;
+  color: $white;
+  border-radius: 1.25rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-wrap: nowrap;
+
+  &__icon {
+    width: 1.25rem;
+    margin-right: 0.5rem;
+  }
+
+  &:hover {
+    background-color: $graphite;
+    border: 0.063rem solid $graphite;
+  }
+
+  &__text {
+    &--edit {
+      display: none;
+      @include tablet {
+        display: block;
+      }
+    }
+  }
+}

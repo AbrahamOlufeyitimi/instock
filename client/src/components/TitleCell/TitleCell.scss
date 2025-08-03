@@ -1,0 +1,15 @@
+@use "../../styles/global.scss" as *;
+
+.title-cell {
+  display: flex;
+  align-items: center;
+  color: $instock-indigo;
+  &__icon {
+    width: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover &__icon {
+    transform: translateX(0.25rem);
+  }
+}

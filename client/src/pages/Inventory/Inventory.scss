@@ -1,0 +1,16 @@
+@use "../../styles/global.scss" as *;
+
+.inventory {
+  @include list-styles;
+
+  .cell-table {
+    &:nth-child(5) {
+      margin-left: auto;
+      margin-right: 0;
+    }
+
+    @include tablet {
+      width: calc((90% - 5rem) / 5);
+    }
+  }
+}

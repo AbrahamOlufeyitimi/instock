@@ -1,0 +1,9 @@
+@use "../../styles/global.scss" as *;
+
+.warehouses {
+  @include list-styles;
+
+  @include desktop {
+    @include handle-max-width;
+  }
+}

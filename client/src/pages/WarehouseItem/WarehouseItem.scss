@@ -1,0 +1,9 @@
+@use "../../styles/global.scss" as *;
+
+.warehouse {
+  @include list-styles;
+
+  &__header {
+    @include header-item-details-styles;
+  }
+}

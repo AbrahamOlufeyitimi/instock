@@ -1,0 +1,28 @@
+@use "../../styles/global.scss" as *;
+
+.form-header {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 0.063rem solid $cloud;
+  @include handle-max-width;
+
+  @include tablet {
+    padding: 1rem 2rem;
+  }
+
+  @include desktop {
+    padding: 1rem 2.5rem;
+  }
+
+  &__icon {
+    width: 1.5rem;
+    display: flex;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}

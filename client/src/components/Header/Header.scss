@@ -1,0 +1,61 @@
+@use "../../styles/global.scss" as *;
+
+.header-wrapper {
+  background-color: $graphite;
+}
+
+.header {
+  @include handle-max-width;
+  padding: 1rem;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  min-height: 2.375rem;
+
+  @include tablet {
+    flex-direction: row;
+    padding: 1rem 2.25rem;
+  }
+
+  &__nav-links {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: 1rem;
+
+    @include tablet {
+      width: auto;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $graphite;
+    border: none;
+    padding: 0 1rem;
+    border-radius: 1.25rem;
+    height: 2.25rem;
+    color: $cloud;
+    width: 100%;
+    text-decoration: none;
+
+    @include tablet {
+      height: 2.375rem;
+    }
+
+    &:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+
+    &--active {
+      color: $white;
+      background-color: $instock-black;
+    }
+  }
+}

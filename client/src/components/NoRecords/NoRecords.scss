@@ -1,0 +1,10 @@
+@import "../../styles/global.scss";
+
+.no-records {
+  padding: 1rem 1.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  @include tablet {
+    padding: 2rem 2.5rem;
+  }
+}

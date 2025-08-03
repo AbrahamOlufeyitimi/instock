@@ -1,0 +1,22 @@
+@use "../../styles/global.scss" as *;
+
+.status {
+  border-radius: 1.25rem;
+  width: fit-content;
+  padding: 0.25rem 0.5rem;
+  &--in-stock {
+    background-color: rgba($green, 0.07);
+  }
+  &--out-of-stock {
+    background-color: rgba($red, 0.07);
+  }
+  &__content {
+    text-transform: uppercase;
+    &--in-stock {
+      color: $green;
+    }
+    &--out-of-stock {
+      color: $red;
+    }
+  }
+}

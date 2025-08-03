@@ -1,0 +1,28 @@
+@use "../../styles/global.scss" as *;
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: inherit;
+  text-align: center;
+
+  &__subheading {
+    font-size: 2rem;
+    line-height: normal;
+  }
+  &__heading {
+    font-size: 5rem;
+    color: $instock-indigo;
+    line-height: normal;
+  }
+  &__content {
+    font-size: 1.1rem;
+    line-height: normal;
+
+    @include tablet {
+      font-size: 1.4rem;
+    }
+  }
+}

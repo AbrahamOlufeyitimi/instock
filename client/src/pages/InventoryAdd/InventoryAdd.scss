@@ -1,0 +1,5 @@
+@use "../../styles/global.scss" as *;
+
+.inventory-add {
+    @include list-styles;
+}

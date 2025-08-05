@@ -11,10 +11,9 @@ const app = express();
 const PORT = process.env.PORT || 8080;
 
 app.use(cors({
-  origin: [
-    "http://localhost:5173",
-    "https://instockweb.netlify.app/"
-  ]
+  origin: "https://instockweb.netlify.app",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
 }));
 app.use(express.json());
 

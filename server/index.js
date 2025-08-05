@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import mysql from "mysql2/promise";
 import warehouseRoutes from "./src/routes/warehouses.js";
 import inventoryRoutes from "./src/routes/inventory.js";
 
